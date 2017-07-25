@@ -1,7 +1,11 @@
 <!doctype html>
 <html>
 <head>
-    <title>Hey! Meadowlark Travel</title>
+    <title>Node.js and Express Tutorial</title>
+	{{#if showTests}}
+		<link rel="stylesheet" href="/vendor/mocha.css">
+	{{/if}}
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
 	<pre>
@@ -11,6 +15,22 @@
 	<header><img src="/img/logo.jpg" alt="Logo" height="50"></header>
 
 	{{{body}}}
+
+
+	{{#if showTests}}
+		<div id="mocha"></div>
+		<script src="/vendor/mocha.js"></script>
+		<script src="/vendor/chai.js"></script>
+		<script>
+			mocha.ui('tdd');
+			var assert = chai.assert;
+		</script>
+		<script src="/qa/tests-global.js"></script>
+		{{#if pageTestScript}}
+			<script src="{{pageTestScript}}"></script>
+		{{/if}}
+		<script>mocha.run();</script>
+	{{/if}}
 
 	<pre>
 	BODY END

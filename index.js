@@ -20,6 +20,24 @@ var fortune = require('./lib/fortune.js');
 
 
 //
+// Enable debugging by passing test=1 in URL query-string
+//
+app.use(function(req, res, next){
+
+	// Set 'showTests' to true if we are NOT in production AND the query string 'test' has value of 1
+	res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
+
+	console.log("DEBUG: res.locals.showTests:", res.locals.showTests);
+	console.log("DEBUG: app.get('env'):", app.get('env'));
+	console.log("DEBUG: req.query.test:", req.query.test);
+
+	next();
+
+});
+
+
+
+//
 // ROUTES
 //
 
@@ -48,7 +66,9 @@ app.get('/about', function(req, res) {
 
 	//res.render('about', { fortune: randomFortune });
 
-	res.render('about', { fortune: fortune.getFortune() });
+	//res.render('about', { fortune: fortune.getFortune() });
+	
+	res.render('about', { fortune: fortune.getFortune(), pageTestScript: '/qa/tests-about.js' });
 });
 
 // Dingo
