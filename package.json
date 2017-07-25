@@ -1,14 +1,14 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "Test App",
+  "description": "Tutorial - Node.js and Express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/EthanRBrown/web-development-with-node-and-express.git"
+    "url": "https://github.com/dan-king/Tutorial-Node.js-and-Express.git"
   },
   "keywords": [
     "test",
