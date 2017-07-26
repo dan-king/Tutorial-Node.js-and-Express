@@ -77,6 +77,17 @@ app.get('/dingo', function(req, res) {
 });
 
 
+// Tours
+app.get('/tours/hood-river', function(req, res){
+	res.render('tours/hood-river');
+});
+app.get('/tours/oregon-coast', function(req, res){
+	res.render('tours/oregon-coast');
+});
+app.get('/tours/request-group-rate', function(req, res){
+	res.render('tours/request-group-rate');
+});
+
 
 // custom 404 page
 app.use(function(req, res){
