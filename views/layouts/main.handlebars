@@ -17,6 +17,14 @@
 	{{{body}}}
 
 
+
+	{{#if onDevelopment}}
+		<div>
+			<a href="/debug/echo-req-res">Debug: Echo 'request' and response' objects</a>
+		</div>
+	{{/if}}
+
+
 	{{#if showTests}}
 		<div id="mocha"></div>
 		<script src="/vendor/mocha.js"></script>
